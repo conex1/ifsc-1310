@@ -21,12 +21,14 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
         }
 
         .container {
             display: grid;
             grid-template-columns: 3fr 1fr;
             gap: 30px;
+            min-height: calc(100vh - 160px);
         }
 
         .main-content {
@@ -34,6 +36,39 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .blog-container {
+            margin: 40px 0;
+        }
+
+        .blog-post {
+            margin: 30px 0;
+            padding: 25px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 3px solid var(--secondary);
+        }
+
+        .post-date {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .post-separator {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--light), transparent);
+            margin: 25px 0;
+        }
+
+        .content-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
         }
 
         ol {
@@ -62,7 +97,6 @@
             background-color: #f9f9f9;
         }
 
-        /* Definition List Styles */
         dl {
             margin: 25px 0;
             padding-left: 20px;
@@ -83,6 +117,38 @@
             border-left: 2px solid var(--light);
         }
 
+        blockquote {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--secondary);
+            margin: 25px 0;
+            padding: 25px 30px 20px 30px;
+            color: var(--dark);
+            border-radius: 0 5px 5px 0;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: open-quote;
+            font-size: 2em;
+            color: var(--secondary);
+            line-height: 0.1em;
+            margin-right: 0.25em;
+            vertical-align: -0.4em;
+        }
+
+        .quote-author {
+            text-align: right;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 0.9em;
+            color: var(--primary);
+            padding-right: 20px;
+        }
+
+        .quote-author::before {
+            content: "— ";
+        }
+
         .image-placeholder {
             width: 200px;
             height: 150px;
@@ -96,16 +162,32 @@
 
         .sidebar {
             background-color: var(--primary);
-            color: white;
+            color: grey;
             padding: 20px;
             border-radius: 10px;
             position: fixed;
             right: 20px;
-            bottom: 20px;
+            bottom: 100px;
             width: 250px;
         }
 
-        h1, h2 {
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        h1, h2, h3 {
             color: var(--primary);
         }
 
@@ -117,20 +199,97 @@
         a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .sidebar {
+                position: static;
+                width: auto;
+                margin-top: 30px;
+                bottom: auto;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            blockquote {
+                margin: 15px 0;
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            .blog-post {
+                padding: 15px;
+                margin: 20px 0;
+            }
+
+            .image-placeholder {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="main-content">
-            <h1>Document</h1>
-            
-            <p>This is placeholder text under the title.</p>
-            
-            <h2>List with Roman Numerals</h2>
+            <h1>Title</h1>
+            </p>Text under title.</p>
+
+            <div class="blog-container">
+                <article class="blog-post">
+                    <div class="post-date">3/10/2025</div>
+                    <h2>Title of Post</h2>
+                    <p>Text within post.</p>
+                </article>
+
+                <hr class="post-separator">
+
+                <article class="blog-post">
+                    <div class="post-date">3/11/2025</div>
+                    <h2>Second Post</h2>
+                    <p>Text within second post.</p>
+                    <div class="content-section">
+                        <h3>Addendum</h3>
+                        <p>More text within that post.</p>
+                    </div>
+                </article>
+
+                <hr class="post-separator">
+
+                <article class="blog-post">
+                    <div class="post-date">3/12/25</div>
+                    <h2>Third Post</h2>
+                    <p>This text has an image of my cat.</p>
+                    <div class="image-placeholder">
+                        <img src="assets/cat2.jpg" alt="Description" class="image-placeholder">
+                    </div>
+                </article>
+            </div>
+
+            <h2>Ordered List</h2>
             <ol>
-                <li>Games</li>
-                <li>Movies</li>
-                <li>Shows</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
             </ol>
 
             <h2>Table</h2>
@@ -141,39 +300,58 @@
                     <th>Category III</th>
                 </tr>
                 <tr>
-                    <td>Res Prima</td>
-                    <td>Res Secunda</td>
-                    <td>Res Tertia</td>
+                    <td>Item 1</td>
+                    <td>Item 2</td>
+                    <td>Item 3</td>
                 </tr>
                 <tr>
-                    <td>Elementum A</td>
-                    <td>Elementum B</td>
-                    <td>Elementum C</td>
+                    <td>Item 1:2</td>
+                    <td>Item 2:2</td>
+                    <td>Item 3:2</td>
                 </tr>
             </table>
 
             <h2>Terms</h2>
             <dl>
                 <dt>Term 1</dt>
-                <dd>Description</dd>
+                <dd>Term 1 description</dd>
                 
                 <dt>Term 2</dt>
-                <dd>Description</dd>
+                <dd>Term 2 description</dd>
                 
                 <dt>Term 3</dt>
-                <dd>Description</dd>
+                <dd>Term 3 description</dd>
             </dl>
 
+            <blockquote>
+                <p>I did not say that</p>
+                <div class="quote-author">
+                    Abe Lincoln, <em>Former US President</em>
+                </div>
+            </blockquote>
+
             <div class="image-placeholder">
-                <img src="assets/yourimage.jpg" alt="Description" class="image-placeholder">
+                <img src="assets/cat1.jpg" alt="Description" class="image-placeholder">
             </div>
         </div>
 
         <div class="sidebar">
-            <h3>Tile</h3>
-            <p>Paragraph 1</p>
-            <p>Paragraph 2 that has a break between the first.</p>
+            <h3>Sidebar title</h3>
+            <div class="content-section">
+                <p>Recent Posts:</p>
+                <ul>
+                    <li>Post 1</li>
+                    <li>Post 2t</li>
+                    <li>Post 3</li>
+                </ul>
+            </div>
+            <p>Text within sidebar</p>
         </div>
     </div>
+
+    <footer>
+        <p>© 2025 Robert Pierce</p>
+        <p>CSS Demo · Web Technologies</p>
+    </footer>
 </body>
 </html>
