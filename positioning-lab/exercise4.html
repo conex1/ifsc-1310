@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positioning Lab</title>
+  <style type="text/css">
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      background-color: #ECECEC;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: Tahoma, Geneva, sans-serif;
+      color: #FFF;
+      font-weight: bold;
+      text-shadow: 2px 2px #000;
+    }
+
+    h1 {
+      color: #000;
+      margin: 20px 0;
+      text-shadow: none;
+      font-weight: normal;
+    }
+
+    #wrapper {
+      background-color: #FFF;
+      width: 1000px;
+      height: 1000px;
+      margin: 20px auto;
+      position: relative;
+      border: 1px solid #c0c0c0;
+    }
+
+    #navy, #teal, #blue, #aqua {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      text-align: center;
+      padding-top: 25px;
+      font-size: 1.2em;
+    }
+
+    #navy { background: #001f3f; top: 0; left: 0; }
+    #teal { background: #39CCCC; top: 0; right: 0; }
+    #blue { background: #0074D9; bottom: 0; left: 0; }
+    #aqua { background: #7FDBFF; bottom: 0; right: 0; }
+
+    #footer {
+      background: #666;
+      position: absolute;
+      width: 150px;
+      height: 200px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 25px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercise</h1>
+  <section id="wrapper">
+    <div id="navy">Navy</div>
+    <div id="teal">Teal</div>
+    <div id="blue">Blue</div>
+    <div id="aqua">Aqua</div>
+    <div id="footer">Footer</div>
+  </section>
+</body>
+</html>

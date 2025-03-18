@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absolute Layout</title>
+  <style>
+    /* Box Sizing */
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    /* General Styling */
+    body {
+      background-color: #ECECEC;
+      font-family: Tahoma, Geneva, sans-serif;
+      font-weight: bold;
+      text-align: center;
+      color: #FFF;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      color: #000;
+      font-weight: normal;
+      margin-top: 50px;
+      font-size: 32px;
+    }
+
+    /* Wrapper */
+    #wrapper {
+      background-color: #FFF;
+      border: 2px solid #c0c0c0;
+      width: 600px;
+      height: 220px; /* Adjusted for better spacing */
+      position: relative;
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    #footer {
+      background-color: #666;
+      width: 150px;
+      height: 130px; /* Made it taller */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Footer Text (Positioned at the Top Side) */
+    #footer span {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+    }
+
+    /* Floating Boxes (Absolute Positioning) */
+    .box {
+      width: 120px;  /* Adjusted for better proportion */
+      height: 180px; /* Made them bigger */
+      position: absolute;
+    }
+
+    /* Box Positions - Fully Touching the Corners */
+    #navy { background-color: #001f3f; top: 0; left: 0; }
+    #teal { background-color: #39CCCC; top: 0; right: 0; }
+    #blue { background-color: #2374D9; bottom: 0; left: 0; }
+    #aqua { background-color: #7FDBFF; bottom: 0; right: 0; }
+  </style>
+</head>
+<body>
+  <h1>Exercise</h1>
+  <section id="wrapper">
+    <div id="footer"><span>Footer</span></div>
+  </section>
+  
+  <!-- Absolute Positioned Boxes -->
+  <div id="navy" class="box">Navy</div>
+  <div id="teal" class="box">Teal</div>
+  <div id="blue" class="box">Blue</div>
+  <div id="aqua" class="box">Aqua</div>
+</body>
+</html>

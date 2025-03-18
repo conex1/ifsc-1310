@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Float Layout</title>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      background-color: #ECECEC;
+      font-family: Tahoma, Geneva, sans-serif;
+      font-weight: bold;
+      text-align: center;
+      color: #FFF;
+    }
+
+    h1 {
+      color: #000;
+      font-weight: normal;
+      padding: 20px;
+      font-size: 32px;
+    }
+
+    #wrapper {
+      background-color: #FFF;
+      border: 2px solid #c0c0c0;
+      width: 1000px;
+      margin: auto;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .box {
+      width: 48%;
+      height: 200px;
+      float: left;
+      margin: 1%;
+      position: relative;
+    }
+
+    .box span {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
+    }
+
+    #navy { background-color: #001f3f; }
+    #teal { background-color: #39CCCC; }
+    #blue { background-color: #0074D9; }
+    #aqua { background-color: #7FDBFF; }
+
+    #footer {
+      background-color: #666;
+      height: 60px;
+      line-height: 60px;
+      clear: both;
+      font-size: 26px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercise</h1>
+  <section id="wrapper">
+    <div id="navy" class="box"><span>Navy</span></div>
+    <div id="teal" class="box"><span>Teal</span></div>
+    <div id="blue" class="box"><span>Blue</span></div>
+    <div id="aqua" class="box"><span>Aqua</span></div>
+    <div id="footer">Footer</div>
+  </section>
+</body>
+</html>
